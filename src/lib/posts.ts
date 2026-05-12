@@ -25,7 +25,7 @@ export function getSortedPostsData(): BlogPost[] {
     return [];
   }
   
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '');
     const fullPath = path.join(postsDirectory, fileName);

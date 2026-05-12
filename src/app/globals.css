@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@theme inline {
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for aesthetic */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-md;
+}
+
+.text-gradient-engineering {
+  @apply bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent;
+}
+
+.text-gradient-security {
+  @apply bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent;
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #cbd5e1 10%, #cbd5e1 90%, transparent);
+}
